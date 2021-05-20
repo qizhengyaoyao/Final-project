@@ -8,10 +8,10 @@
 		<title>Creativo</title>
 
 		<!-- Loading third party fonts -->
-		<link href="fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 		<!-- Loading main css file -->
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../static/style.css">
 		
 		<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
@@ -27,9 +27,9 @@
 			
 			<header class="site-header">
 				<div class="container shrinked">
-					<a href="about.html" class="button">About Us</a>
-					<h1 class="logo"><a href="index.html">Creativo</a></h1>
-					<a href="contact.html" class="button">Contact</a>
+					<a href="{{ url_for('about') }}" class="button">About Us</a>
+					<h1 class="logo"><a href="{{ url_for('main') }}">Predicta</a></h1>
+					<a href="{{ url_for('contact') }}" class="button">Contact</a>
 				</div>	<!-- .container -->
 			</header> <!-- .site-header -->
 
@@ -45,19 +45,19 @@
 
 					<div class="team-section row">
 						<div class="team">
-							<img src="dummy/team-1.jpg" alt="Martin Lorenz" class="team-image">
+							<img src="../static/dummy/team-1.jpg" alt="Martin Lorenz" class="team-image">
 							<h2 class="team-name">Martin Lorenz</h2>
 						</div>
 						<div class="team">
-							<img src="dummy/team-2.jpg" alt="Tina Montgomery" class="team-image">
+							<img src="../static/dummy/team-2.jpg" alt="Tina Montgomery" class="team-image">
 							<h2 class="team-name">Tina Montgomery</h2>
 						</div>
 						<div class="team">
-							<img src="dummy/team-3.jpg" alt="Peter Wang" class="team-image">
+							<img src="../static/dummy/team-3.jpg" alt="Peter Wang" class="team-image">
 							<h2 class="team-name">Peter Wang</h2>
 						</div>
 						<div class="team">
-							<img src="dummy/team-4.jpg" alt="Sarah Stone" class="team-image">
+							<img src="../static/dummy/team-4.jpg" alt="Sarah Stone" class="team-image">
 							<h2 class="team-name">Sarah Stone</h2>
 						</div>
 					</div>
@@ -82,9 +82,9 @@
 
 		</div>
 
-		<script src="js/jquery-1.11.1.min.js"></script>
-		<script src="js/plugins.js"></script>
-		<script src="js/app.js"></script>
+		<script src="../static/js/jquery-1.11.1.min.js"></script>
+		<script src="../static/js/plugins.js"></script>
+		<script src="../static/js/app.js"></script>
 		
 	</body>
 

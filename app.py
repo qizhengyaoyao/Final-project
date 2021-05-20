@@ -1,7 +1,17 @@
 import os
-from flask import (Flask, render_template, request, redirect)
+from dotenv import load_dotenv
+from flask import (
+    Flask,
+    render_template,
+    jsonify,
+    request,
+    redirect)
 import numpy as np
-import tensorflow
+#import tensorflow
+import joblib
+from flask_cors import CORS
+import requests
+import pandas as pd
 
 #################################################
 # Flask Setup
@@ -11,23 +21,24 @@ app = Flask(__name__, template_folder = 'templates' )
 #################################################
 # Flask Routes
 #################################################
-from tensorflow.keras.models import load_model
-model = load_model("xgboost_model.h5")
+#from tensorflow.keras.models import load_model
+model = joblib.load("model/revenue_xgboost_model.sav")
 
 
 @app.route("/", methods=['GET', 'POST'])
+@app.route("/index", methods=['GET', 'POST'])
 def main():
-    if flask.request.method == 'GET':
-        return(flask.render_template('contact.html'))
+    if request.method == 'GET':
+        return(render_template('index.html'))
 
-    if flask.request.method == 'POST':
+    if request.method == 'POST':
 
         #retreiving input values
-        year = flask.request.form['year']
-        day = flask.request.form['day']
-        budget = flask.request.form['budget']
-        duration = flask.request.form['duration']
-        votes = flask.request.form['votes']
+        year = request.form['year']
+        day = request.form['day']
+        budget = request.form['budget']
+        duration = request.form['duration']
+        votes = request.form['votes']
         
 
 
@@ -37,9 +48,16 @@ def main():
 
         prediction = model.predict(input_variables)[0]
 
-        return(flask.render_template("review.html"), original_input = {'title':title,'budget':budget,'date':date}, 'result' = prediction)
+        return render_template("index.html", original_input = {'title':title,'budget':budget,'date':date}, result = prediction)
     
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 
