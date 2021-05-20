@@ -35,9 +35,9 @@ def main():
 
         #retreiving input values
         budget = request.form['budget']
-        votes = request.form.get('popularity')
-        year = request.form.get('year')
-        day = request.form.get('day')
+        votes = request.form['popularity']
+        year = request.form['year']
+        day = request.form['day']
         duration = request.form['duration']
 
         # input_variables = pd.DataFrame([[title,budget,date]],
