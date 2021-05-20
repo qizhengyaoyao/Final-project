@@ -1,202 +1,117 @@
 feature,importance
-year,622
-duration,761
-votes,1156
-budget,856
-day,793
-language_English,9
-language_Spanish,27
-language_French,25
-language_Russian,10
-language_German,19
+year,325
+duration,308
+votes,599
+budget,535
+day,319
+language_English,2
+language_Spanish,11
+language_French,8
+language_Russian,3
+language_German,8
 language_Italian,9
-language_Japanese,18
-language_Mandarin,26
-language_Arabic,4
-language_Korean,7
-language_Latin,11
-language_Hindi,9
-language_Portuguese,2
-language_Hebrew,9
-language_Greek,6
-language_Thai,3
-language_Vietnamese,3
-genre_Drama,96
-genre_Comedy,91
-genre_Action,105
-genre_Crime,55
-genre_Romance,53
-genre_Adventure,101
-genre_Thriller,29
-genre_Horror,22
-genre_Mystery,15
-genre_Fantasy,41
-genre_Sci-Fi,77
-genre_Family,69
-genre_Biography,11
-genre_Animation,75
-genre_Music,9
+language_Japanese,3
+language_Mandarin,13
+language_Korean,3
+language_Cantonese,3
+language_Hindi,6
+language_Hebrew,4
+language_Greek,4
+language_Hungarian,2
+language_Thai,5
+language_Vietnamese,5
+genre_Drama,37
+genre_Comedy,33
+genre_Action,30
+genre_Crime,19
+genre_Romance,20
+genre_Adventure,39
+genre_Thriller,4
+genre_Horror,6
+genre_Mystery,4
+genre_Fantasy,19
+genre_Sci-Fi,35
+genre_Family,38
+genre_Biography,13
+genre_Animation,48
+genre_Music,5
+genre_War,2
 genre_Musical,2
-country_USA,26
-country_UK,49
-country_France,13
-country_Canada,18
-country_Germany,18
-country_China,32
-country_Japan,11
-country_Australia,13
-country_Hong Kong,4
-country_Italy,3
-country_India,5
-country_New Zealand,2
-country_Denmark,2
-director_Woody Allen,6
-director_Clint Eastwood,2
-director_Steven Spielberg,18
-director_Martin Scorsese,17
-director_Ridley Scott,9
-director_Brian De Palma,2
-director_Rob Reiner,9
-director_Joel Coen,2
-director_Roland Emmerich,5
-writer_John Hughes,3
-writer_Luc Besson,4
-writer_Robert Mark Kamen,3
-company_Universal Pictures,44
-company_Warner Bros.,18
-company_Columbia Pictures,9
-company_Paramount Pictures,32
-company_Twentieth Century Fox,22
-company_New Line Cinema,10
-company_Touchstone Pictures,10
-company_Walt Disney Pictures,13
-company_Screen Gems,5
-company_Summit Entertainment,3
-company_Fox 2000 Pictures,10
-company_Focus Features,6
-company_Hollywood Pictures,7
+country_USA,2
+country_UK,15
+country_France,3
+country_Canada,5
+country_Germany,7
+country_China,15
+country_Australia,10
+country_Spain,2
+country_New Zealand,3
+country_Denmark,3
+director_Woody Allen,5
+director_Clint Eastwood,4
+director_Steven Spielberg,12
+director_Martin Scorsese,12
+writer_Stephen King,2
+company_Universal Pictures,23
+company_Warner Bros.,4
+company_Columbia Pictures,3
+company_Paramount Pictures,15
+company_Twentieth Century Fox,8
+company_New Line Cinema,8
+company_Touchstone Pictures,5
+company_Walt Disney Pictures,5
+company_Screen Gems,3
+company_Fox 2000 Pictures,7
+company_Focus Features,7
+company_Hollywood Pictures,3
 company_United Artists,2
-company_The Weinstein Company,5
-company_Walt Disney Animation Studios,34
-company_Walt Disney Productions,4
-actor_Robert De Niro,2
-actor_Nicolas Cage,3
-actor_Bruce Willis,3
-actor_Woody Harrelson,9
-actor_Jeff Bridges,4
-actor_Johnny Depp,18
-actor_Harrison Ford,11
-actor_John Travolta,7
+actor_Nicolas Cage,5
+actor_Bruce Willis,6
+actor_Woody Harrelson,4
+actor_Tom Hanks,2
+actor_Robert Downey Jr.,2
+actor_Jeff Bridges,2
+actor_John Cusack,2
+actor_Liam Neeson,4
+actor_Johnny Depp,10
+actor_Harrison Ford,9
+actor_John Travolta,5
 actor_Meryl Streep,4
-actor_Tom Cruise,8
-actor_Eddie Murphy,17
-actor_Matt Damon,5
-actor_John Goodman,4
-actor_Antonio Banderas,5
-actor_Julia Roberts,19
-actor_Brad Pitt,17
-actor_Ewan McGregor,6
-actor_Cate Blanchett,3
-actor_Al Pacino,5
-actor_Michelle Pfeiffer,5
-actor_Scarlett Johansson,7
-actor_Richard Gere,2
-actor_Ben Kingsley,4
-actor_Adam Sandler,3
-actor_Kevin Bacon,2
-actor_Arnold Schwarzenegger,9
-actor_Michael Douglas,9
+actor_Tom Cruise,6
+actor_Anthony Hopkins,4
+actor_Eddie Murphy,13
+actor_Matt Damon,4
+actor_Val Kilmer,2
+actor_John Goodman,2
+actor_Antonio Banderas,3
+actor_Julia Roberts,12
+actor_Brad Pitt,14
+actor_Ewan McGregor,9
+actor_Al Pacino,4
+actor_Scarlett Johansson,3
+actor_Ben Kingsley,6
+actor_Jackie Chan,2
+actor_Adam Sandler,5
+actor_Michael Douglas,5
 actor_Michael Keaton,2
-actor_Christian Bale,11
-actor_Pierce Brosnan,7
-actor_Sandra Bullock,15
-actor_Charlize Theron,6
-actor_James Franco,2
-actor_Dustin Hoffman,2
+actor_Christian Bale,10
+actor_Pierce Brosnan,4
+actor_Sandra Bullock,12
+actor_Charlize Theron,8
+actor_James Franco,3
+actor_Jason Statham,4
+actor_Dustin Hoffman,3
+actor_Bill Murray,3
 actor_Gary Oldman,3
 actor_John C. Reilly,7
-actor_Ben Stiller,5
-actor_Jack Black,6
-actor_Will Ferrell,3
+actor_Jack Black,4
+actor_Will Ferrell,2
 actor_Dwayne Johnson,8
-actor_James Woods,7
+actor_James Woods,3
 actor_Ben Affleck,4
-actor_Russell Crowe,10
-actor_Drew Barrymore,2
-actor_Will Smith,8
-actor_Kate Winslet,3
-actor_Steve Carell,5
-actor_Jeff Goldblum,4
-actor_Sigourney Weaver,2
-actor_Diane Lane,2
-actor_Cameron Diaz,4
-actor_Rosario Dawson,6
-actor_Jake Gyllenhaal,9
-actor_Kevin Kline,2
-actor_Steve Buscemi,3
-actor_Ralph Fiennes,6
-actor_Mark Ruffalo,9
-actor_Robert Redford,8
-actor_Joaquin Phoenix,3
-actor_Vincent D'Onofrio,5
-actor_Leonardo DiCaprio,6
-actor_Paul Rudd,7
-actor_Bradley Cooper,3
-actor_Hugh Jackman,5
-actor_Jennifer Lopez,2
-actor_Jim Broadbent,4
-actor_Guy Pearce,7
-actor_Seth Rogen,2
-actor_Anna Kendrick,7
-actor_William Hurt,2
-actor_Ron Perlman,2
-actor_Tim Robbins,2
-actor_Jennifer Connelly,11
-actor_Renée Zellweger,3
-actor_Joseph Gordon-Levitt,3
-actor_Jude Law,2
-actor_Paul Walker,2
-actor_Vin Diesel,9
-actor_Amy Adams,17
-actor_Jamie Lee Curtis,3
-actor_Demi Moore,9
-actor_Tom Wilkinson,5
-actor_Katie Holmes,2
-actor_Channing Tatum,9
-actor_Bill Pullman,3
-actor_Casey Affleck,2
-actor_Edward Norton,14
-actor_Justin Long,6
-actor_Chris Hemsworth,14
-actor_Kathy Bates,8
-actor_Martin Lawrence,7
-actor_Kristen Stewart,7
-actor_Michael Fassbender,9
-actor_Will Arnett,2
-actor_Bette Midler,2
-actor_Frances McDormand,2
-actor_Whoopi Goldberg,4
-actor_Stephen Lang,35
-actor_Jim Caviezel,2
-actor_Ryan Gosling,10
-actor_Kevin Hart,13
-actor_Maggie Smith,4
-actor_Ian McKellen,2
-actor_Jada Pinkett Smith,4
-actor_Daniel Craig,2
-actor_Clive Owen,2
-actor_Zoe Saldana,24
-actor_Shia LaBeouf,5
-actor_Zac Efron,3
-actor_Malcolm McDowell,3
-actor_Barbara Hershey,3
-actor_Christopher McDonald,2
-actor_Helen Hunt,5
-actor_Jonah Hill,4
-actor_Michael Shannon,3
-actor_Goldie Hawn,4
-actor_Alfre Woodard,10
-actor_Regina Hall,3
-actor_Chris Pratt,7
-actor_Nicholas Hoult,8
-actor_Kristen Bell,12
+actor_Will Smith,9
+actor_Alfred Molina,4
+actor_Jeff Goldblum,3
+actor_Sigourney Weaver,4
+actor_Rosario Dawson,7
+actor_Mark Ruffalo,2
