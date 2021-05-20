@@ -28,7 +28,7 @@
 			<header class="site-header">
 				<div class="container shrinked">
 					<a href="{{ url_for('about') }}" class="button">About Us</a>
-					<h1 class="logo"><a href="{{ url_for('main') }}">Predicta</a></h1>
+					<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
 					<a href="{{ url_for('contact') }}" class="button">Contact</a>
 				</div>	<!-- .container -->
 			</header> <!-- .site-header -->
@@ -39,7 +39,7 @@
 
 					<div class="counter-wrap" data-date-target="Oct 31, 2021 10:00:00">
 						<div class="counter revenue">
-							<div class="number">$ 1000000</div>
+							<div class="number">{{ result }}</div>
 							<div class="caption">Revenue</div>
 						</div> <!-- .counter -->
 						<div class="counter rating">
@@ -49,58 +49,63 @@
 					</div> <!-- .counter-wrap -->
 
 					<div class="row contact-section">
-						<form action="" class="contact-form">
+						<form action="/index" method="post" class="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="Year">
+									<input type="text" placeholder="Budget" id="budget" name="budget">
+									<i class="fa fa-usd"></i>
+								</div>
+								<div class="control">
+									<input type="text" placeholder="Year" id="year" name="year">
 									<i class="fa fa-calendar-o"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Duration">
+									<input type="text" placeholder="Duration" id="duration" name="duration">
 									<i class="fa fa-clock-o"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Language">
+									<input type="text" placeholder="Language" id="language" name="language">
 									<i class="fa fa-globe"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Country">
+									<input type="text" placeholder="Country" id="country" name="country">
 									<i class="fa fa-map-marker"></i>
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="Day">
-									<i class="fa fa-calendar" aria-hidden="true"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Popularity">
+									<input type="text" placeholder="Popularity" id="populartiy" name="populartiy">
 									<i class="fa fa-fire"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Genre">
+									<input type="text" placeholder="Day" id="day" name="day">
+									<i class="fa fa-calendar" aria-hidden="true"></i>
+								</div>
+								<div class="control">
+									<input type="text" placeholder="Genre" id="genre" name="genre">
 									<i class="fa fa-play"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Company">
+									<input type="text" placeholder="Company" id="company" name="company">
 									<i class="fa fa-building-o"></i>
+								</div>
+								<div class="control">
+									<input type="text" placeholder="Director" id="director" name="director">
+									<i class="fa fa-video-camera"></i>
 								</div>
 							</div>
 							<div class="col-sm-12">
+								
 								<div class="control">
-									<input type="text" placeholder="Director">
-									<i class="fa fa-video-camera"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Writer">
+									<input type="text" placeholder="Writer" id="writer" name="writer">
 									<i class="fa fa-pencil"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Actor">
+									<input type="text" placeholder="Actor" id="actor" name="actor">
 									<i class="fa fa-user"></i>
 								</div>
 								<div class="center-aligned">
-									<input type="submit" value="Submit">
+									<input type="submit" value="Submit" id="submite" name="submit">
 								</div>
 							</div>
 							

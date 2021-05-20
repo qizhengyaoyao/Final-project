@@ -25,30 +25,37 @@ app = Flask(__name__, template_folder = 'templates' )
 model = joblib.load("model/revenue_xgboost_model.sav")
 
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/")
+def home():
+    return(render_template('index.html', result = 100))
+
 @app.route("/index", methods=['GET', 'POST'])
 def main():
-    if request.method == 'GET':
-        return(render_template('index.html'))
-
     if request.method == 'POST':
 
         #retreiving input values
-        year = request.form['year']
-        day = request.form['day']
         budget = request.form['budget']
+        votes = request.form.get('popularity')
+        year = request.form.get('year')
+        day = request.form.get('day')
         duration = request.form['duration']
-        votes = request.form['votes']
-        
 
+        # input_variables = pd.DataFrame([[title,budget,date]],
+        #                                columns=['title', 'budget', 'date'],
+        #                                dtype=float)
 
-        input_variables = pd.DataFrame([[title,budget,date]],
-                                       columns=['title', 'budget', 'date'],
-                                       dtype=float)
+        # prediction = model.predict(input_variables)[0]
 
-        prediction = model.predict(input_variables)[0]
+        if budget=="":
+            prediction=10000000
+        else:
+            prediction=int(budget)*10
 
-        return render_template("index.html", original_input = {'title':title,'budget':budget,'date':date}, result = prediction)
+        return render_template("index.html", result = prediction)
+    else:
+        prediction=10000000
+        return render_template("index.html", result = prediction)
+
     
 
 @app.route("/about")
