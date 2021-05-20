@@ -314,7 +314,7 @@ form textarea {
   outline: none;
   font-weight: 300;
   -webkit-transition: .3s ease;
-          /* transition: .3s ease;  */
+          transition: .3s ease; 
         }
   .button:focus, form input[type="submit"]:focus, form button:focus, form input[type="reset"]:focus {
     outline: none; }
@@ -1196,7 +1196,7 @@ form textarea {
   font-size: 48px;
   font-size: 2.6666666667em;
   -webkit-transition: .3s ease;
-          /* transition: .3s ease; */
+          transition: .3s ease;
   text-indent: -10px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4); }
@@ -1313,14 +1313,14 @@ form textarea {
     .contact-form .control .fa {
       color: #7d7482;
       -webkit-transition: 0.3s ease;
-              /* transition: 0.3s ease;  */
+              transition: 0.3s ease; 
             }
     .contact-form .control input, .contact-form .control textarea {
       width: 100%;
       padding-left: 50px;
       color: #61d8ba;
       -webkit-transition: .3s ease;
-              /* transition: .3s ease;  */
+              transition: .3s ease; 
             }
       .contact-form .control input:focus, .contact-form .control input:hover, .contact-form .control textarea:focus, .contact-form .control textarea:hover {
         border-color: #61d8ba; }
@@ -1354,7 +1354,7 @@ form textarea {
     font-size: 18px;
     font-size: 1em;
     -webkit-transition: .3s ease;
-            /* transition: .3s ease;  */
+            transition: .3s ease; 
           }
     .subscribe-form input[type="text"]:focus, .subscribe-form input[type="text"]:active, .subscribe-form input[type="email"]:focus, .subscribe-form input[type="email"]:active {
       border-color: #61d8ba; }
@@ -1366,7 +1366,7 @@ form textarea {
     top: 13px;
     color: #4c4551;
     -webkit-transition: .3s ease;
-            /* transition: .3s ease;  */
+            transition: .3s ease; 
           }
   .subscribe-form input[type="submit"] {
     position: absolute;
@@ -1390,7 +1390,7 @@ form textarea {
     font-size: 18px;
     font-size: 1em;
     -webkit-transition: .3s ease;
-            /* transition: .3s ease;  */
+            transition: .3s ease; 
           }
     .social-links a:hover, .social-links a:focus {
       background: #61d8ba; }
