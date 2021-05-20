@@ -28,9 +28,9 @@ def film_predictor(input_dict):
         predictor_inputs["comp"]['votes'] = int(input_dict['popularity'])
         
         predictor_inputs["opt"]["language_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['language'].split(";")]
-        predictor_inputs["opt"]["country_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['country'].split(";")]
+        predictor_inputs["opt"]["country_"] = [ x.lstrip().rstrip() for x in input_dict['country'].split(";")]
         predictor_inputs["opt"]["genre_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['genre'].split(";")]
-        predictor_inputs["opt"]["company_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['company'].split(";")]
+        predictor_inputs["opt"]["company_"] = [ x.lstrip().rstrip() for x in input_dict['company'].split(";")]
         predictor_inputs["opt"]["director_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['director'].split(";")]
         predictor_inputs["opt"]["writer_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['writer'].split(";")]
         predictor_inputs["opt"]["actor_"] = [ x.lstrip().rstrip().lower().title() for x in input_dict['actor'].split(";")]
