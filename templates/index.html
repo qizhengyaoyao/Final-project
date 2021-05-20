@@ -39,11 +39,11 @@
 
 					<div class="counter-wrap" data-date-target="Oct 31, 2021 10:00:00">
 						<div class="counter revenue">
-							<div class="number">{{ result }}</div>
+							<div class="number">{{ result.revenue }}</div>
 							<div class="caption">Revenue</div>
 						</div> <!-- .counter -->
 						<div class="counter rating">
-							<div class="number">24</div>
+							<div class="number">{{ result.rating }}</div>
 							<div class="caption">Rating</div>
 						</div> <!-- .counter -->
 					</div> <!-- .counter-wrap -->
@@ -52,15 +52,15 @@
 						<form action="/index" method="post" class="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="Budget" id="budget" name="budget">
+									<input type="text" placeholder="*Budget" id="budget" name="budget">
 									<i class="fa fa-usd"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Year" id="year" name="year">
+									<input type="text" placeholder="*Year" id="year" name="year">
 									<i class="fa fa-calendar-o"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Duration" id="duration" name="duration">
+									<input type="text" placeholder="*Duration" id="duration" name="duration">
 									<i class="fa fa-clock-o"></i>
 								</div>
 								<div class="control">
@@ -74,11 +74,11 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="Popularity" id="populartiy" name="populartiy">
+									<input type="text" placeholder="*Total count of Reviews" id="popularity" name="popularity">
 									<i class="fa fa-fire"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Day" id="day" name="day">
+									<input type="text" placeholder="*Release Date: Days into the Year (1 to 366)" id="day" name="day">
 									<i class="fa fa-calendar" aria-hidden="true"></i>
 								</div>
 								<div class="control">
