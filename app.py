@@ -34,11 +34,11 @@ def main():
     if request.method == 'POST':
 
         #retreiving input values
-        budget = request.form['budget']
+        budget = request.form.get('budget')
         votes = request.form.get('popularity')
         year = request.form.get('year')
         day = request.form.get('day')
-        duration = request.form['duration']
+        duration = request.form.get('duration')
 
         # input_variables = pd.DataFrame([[title,budget,date]],
         #                                columns=['title', 'budget', 'date'],
