@@ -1,5 +1,5 @@
 import os
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 from flask import (
     Flask,
     render_template,
@@ -9,7 +9,7 @@ from flask import (
 import numpy as np
 #import tensorflow
 import joblib
-from flask_cors import CORS
+#from flask_cors import CORS
 import requests
 import pandas as pd
 
