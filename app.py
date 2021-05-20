@@ -1,5 +1,5 @@
 import os
-#from dotenv import load_dotenv
+from dotenv import load_dotenv
 from flask import (
     Flask,
     render_template,
@@ -9,7 +9,7 @@ from flask import (
 import numpy as np
 #import tensorflow
 import joblib
-#from flask_cors import CORS
+from flask_cors import CORS
 import requests
 import pandas as pd
 
@@ -34,11 +34,17 @@ def main():
     if request.method == 'POST':
 
         #retreiving input values
-        year = request.form['year']
-        day = request.form['day']
         budget = request.form['budget']
+        votes = request.form.get('popularity')
+        year = request.form.get('year')
+        day = request.form.get('day')
         duration = request.form['duration']
-        votes = request.form['popularity']
+
+        # input_variables = pd.DataFrame([[title,budget,date]],
+        #                                columns=['title', 'budget', 'date'],
+        #                                dtype=float)
+
+        # prediction = model.predict(input_variables)[0]
 
         if budget=="":
             prediction=10000000
