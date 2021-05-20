@@ -39,9 +39,6 @@ def main():
         budget = request.form['budget']
         duration = request.form['duration']
         votes = request.form['popularity']
-        
-
-        
 
         if budget=="":
             prediction=10000000
