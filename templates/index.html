@@ -37,7 +37,7 @@
 				<div class="container shrinked">
 					<h1 class="section-title center-aligned">Predict your interested movies! <br> <span>Revenue and Rating!</span></h1>
 
-					<div class="counter-wrap" data-date-target="Oct 31, 2021 10:00:00">
+					<div class="counter-wrap">
 						<div class="counter revenue">
 							<div class="number">{{ result.revenue }}</div>
 							<div class="caption">Revenue</div>
@@ -48,19 +48,26 @@
 						</div> <!-- .counter -->
 					</div> <!-- .counter-wrap -->
 
+					
+					<h2 class="center-aligned" style="font-weight: 300">
+						{% if result.err_msg %}
+							Please fill all the * fields
+						{% endif %}
+					</h2>
+
 					<div class="row contact-section">
 						<form action="/index" method="post" class="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="*Budget" id="budget" name="budget">
+									<input type="text" placeholder="* Budget" id="budget" name="budget">
 									<i class="fa fa-usd"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="*Year" id="year" name="year">
+									<input type="text" placeholder="* Year (>1920)" id="year" name="year">
 									<i class="fa fa-calendar-o"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="*Duration" id="duration" name="duration">
+									<input type="text" placeholder="* Duration" id="duration" name="duration">
 									<i class="fa fa-clock-o"></i>
 								</div>
 								<div class="control">
@@ -74,11 +81,11 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="*Total count of Reviews" id="popularity" name="popularity">
+									<input type="text" placeholder="* Popularity" id="popularity" name="popularity">
 									<i class="fa fa-fire"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="*Release Date: Days into the Year (1 to 366)" id="day" name="day">
+									<input type="text" placeholder="* Day of the year (1 to 365)" id="day" name="day">
 									<i class="fa fa-calendar" aria-hidden="true"></i>
 								</div>
 								<div class="control">
