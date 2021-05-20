@@ -1,0 +1,117 @@
+feature,importance
+year,325
+duration,308
+votes,599
+budget,535
+day,319
+language_English,2
+language_Spanish,11
+language_French,8
+language_Russian,3
+language_German,8
+language_Italian,9
+language_Japanese,3
+language_Mandarin,13
+language_Korean,3
+language_Cantonese,3
+language_Hindi,6
+language_Hebrew,4
+language_Greek,4
+language_Hungarian,2
+language_Thai,5
+language_Vietnamese,5
+genre_Drama,37
+genre_Comedy,33
+genre_Action,30
+genre_Crime,19
+genre_Romance,20
+genre_Adventure,39
+genre_Thriller,4
+genre_Horror,6
+genre_Mystery,4
+genre_Fantasy,19
+genre_Sci-Fi,35
+genre_Family,38
+genre_Biography,13
+genre_Animation,48
+genre_Music,5
+genre_War,2
+genre_Musical,2
+country_USA,2
+country_UK,15
+country_France,3
+country_Canada,5
+country_Germany,7
+country_China,15
+country_Australia,10
+country_Spain,2
+country_New Zealand,3
+country_Denmark,3
+director_Woody Allen,5
+director_Clint Eastwood,4
+director_Steven Spielberg,12
+director_Martin Scorsese,12
+writer_Stephen King,2
+company_Universal Pictures,23
+company_Warner Bros.,4
+company_Columbia Pictures,3
+company_Paramount Pictures,15
+company_Twentieth Century Fox,8
+company_New Line Cinema,8
+company_Touchstone Pictures,5
+company_Walt Disney Pictures,5
+company_Screen Gems,3
+company_Fox 2000 Pictures,7
+company_Focus Features,7
+company_Hollywood Pictures,3
+company_United Artists,2
+actor_Nicolas Cage,5
+actor_Bruce Willis,6
+actor_Woody Harrelson,4
+actor_Tom Hanks,2
+actor_Robert Downey Jr.,2
+actor_Jeff Bridges,2
+actor_John Cusack,2
+actor_Liam Neeson,4
+actor_Johnny Depp,10
+actor_Harrison Ford,9
+actor_John Travolta,5
+actor_Meryl Streep,4
+actor_Tom Cruise,6
+actor_Anthony Hopkins,4
+actor_Eddie Murphy,13
+actor_Matt Damon,4
+actor_Val Kilmer,2
+actor_John Goodman,2
+actor_Antonio Banderas,3
+actor_Julia Roberts,12
+actor_Brad Pitt,14
+actor_Ewan McGregor,9
+actor_Al Pacino,4
+actor_Scarlett Johansson,3
+actor_Ben Kingsley,6
+actor_Jackie Chan,2
+actor_Adam Sandler,5
+actor_Michael Douglas,5
+actor_Michael Keaton,2
+actor_Christian Bale,10
+actor_Pierce Brosnan,4
+actor_Sandra Bullock,12
+actor_Charlize Theron,8
+actor_James Franco,3
+actor_Jason Statham,4
+actor_Dustin Hoffman,3
+actor_Bill Murray,3
+actor_Gary Oldman,3
+actor_John C. Reilly,7
+actor_Jack Black,4
+actor_Will Ferrell,2
+actor_Dwayne Johnson,8
+actor_James Woods,3
+actor_Ben Affleck,4
+actor_Will Smith,9
+actor_Alfred Molina,4
+actor_Jeff Goldblum,3
+actor_Sigourney Weaver,4
+actor_Rosario Dawson,7
+actor_Mark Ruffalo,2
