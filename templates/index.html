@@ -29,7 +29,7 @@
 				<div class="container shrinked">
 					<a href="{{ url_for('about') }}" class="button">About Us</a>
 					<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
-					<a href="{{ url_for('contact') }}" class="button">Contact</a>
+					<a href="{{ url_for('model') }}" class="button">Our Model</a>
 				</div>	<!-- .container -->
 			</header> <!-- .site-header -->
 
@@ -59,7 +59,7 @@
 						<form action="/index" method="post" class="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="* Budget" id="budget" name="budget">
+									<input type="text" placeholder="* Budget e.g. 100000000" id="budget" name="budget">
 									<i class="fa fa-usd"></i>
 								</div>
 								<div class="control">
@@ -81,7 +81,7 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="* Popularity" id="popularity" name="popularity">
+									<input type="text" placeholder="* Popularity e.g. 100000000" id="popularity" name="popularity">
 									<i class="fa fa-fire"></i>
 								</div>
 								<div class="control">
