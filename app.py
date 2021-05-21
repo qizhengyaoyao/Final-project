@@ -21,7 +21,7 @@ app = Flask(__name__, template_folder = 'templates' )
 
 @app.route("/")
 def home():
-    predictions = {"err_msg":0,"revenue": "-", "rating": "-"}
+    predictions = {"err_msg":0,"movie_name":"","revenue": "-", "rating": "-"}
     return(render_template('index.html', result = predictions))
 
 @app.route("/index", methods=['GET', 'POST'])
@@ -32,6 +32,7 @@ def main():
         #################################################
         input_dict = {}
 
+        input_dict['moviename'] = request.form.get('moviename')
         input_dict['budget'] = request.form.get('budget')
         input_dict['year'] = request.form.get('year')
         input_dict['day'] = request.form.get('day')
@@ -52,6 +53,7 @@ def main():
 
     else:
         err_msg = 1
+        movie_name=""
         revenue_pred = "-"
         ratings_pred = "-"
         predictions = {"err_msg":err_msg, "revenue": revenue_pred, "rating": ratings_pred}
