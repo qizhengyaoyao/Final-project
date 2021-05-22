@@ -35,7 +35,13 @@
 
 			<main class="main-content">
 				<div class="container shrinked">
-					<h1 class="section-title center-aligned">Predict your interested movies! <br> <span>Revenue and Rating!</span></h1>
+					<h1 class="section-title center-aligned">Predict a movie's <br> <span>Revenue and Rating!</span></h1>
+
+					<h1 class="section-title center-aligned">
+						{% if result.err_msg==0 and result.movie_name %}
+							Prediciton of <span> Movie: &#60; {{ result.movie_name }} &#62; </span>
+						{% endif %}
+					</h1>
 
 					<div class="counter-wrap">
 						<div class="counter revenue">
@@ -59,16 +65,16 @@
 						<form action="/index" method="post" class="contact-form">
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="* Budget e.g. 100000000" id="budget" name="budget">
+									<input type="text" placeholder="Movie Name" id="moviename" name="moviename">
 									<i class="fa fa-usd"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="* Year (>1920)" id="year" name="year">
-									<i class="fa fa-calendar-o"></i>
+									<input type="text" placeholder="* Popularity e.g. 100000000" id="popularity" name="popularity">
+									<i class="fa fa-fire"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="* Duration" id="duration" name="duration">
-									<i class="fa fa-clock-o"></i>
+									<input type="text" placeholder="* Day of the year (1 to 365)" id="day" name="day">
+									<i class="fa fa-calendar" aria-hidden="true"></i>
 								</div>
 								<div class="control">
 									<input type="text" placeholder="Language" id="language" name="language">
@@ -81,12 +87,16 @@
 							</div>
 							<div class="col-sm-6">
 								<div class="control">
-									<input type="text" placeholder="* Popularity e.g. 100000000" id="popularity" name="popularity">
-									<i class="fa fa-fire"></i>
+									<input type="text" placeholder="* Budget e.g. 100000000" id="budget" name="budget">
+									<i class="fa fa-usd"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="* Day of the year (1 to 365)" id="day" name="day">
-									<i class="fa fa-calendar" aria-hidden="true"></i>
+									<input type="text" placeholder="* Year (>1920)" id="year" name="year">
+									<i class="fa fa-calendar-o"></i>
+								</div>
+								<div class="control">
+									<input type="text" placeholder="* Duration (Minutes)" id="duration" name="duration">
+									<i class="fa fa-clock-o"></i>
 								</div>
 								<div class="control">
 									<input type="text" placeholder="Genre" id="genre" name="genre">
@@ -96,19 +106,18 @@
 									<input type="text" placeholder="Company" id="company" name="company">
 									<i class="fa fa-building-o"></i>
 								</div>
+							</div>
+							<div class="col-sm-12">
 								<div class="control">
 									<input type="text" placeholder="Director" id="director" name="director">
 									<i class="fa fa-video-camera"></i>
 								</div>
-							</div>
-							<div class="col-sm-12">
-								
 								<div class="control">
 									<input type="text" placeholder="Writer" id="writer" name="writer">
 									<i class="fa fa-pencil"></i>
 								</div>
 								<div class="control">
-									<input type="text" placeholder="Actor" id="actor" name="actor">
+									<input type="text" placeholder="Actor(s) (For multiple actors, separate by ;)" id="actor" name="actor">
 									<i class="fa fa-user"></i>
 								</div>
 								<div class="center-aligned">

@@ -82,15 +82,20 @@ def film_predictor(input_dict):
         rate_test_df["day"]=day_scaler.transform(rate_test_df[["day"]])
 
         err_msg = 0
+        movie_name="-"
         revenue_pred = int(revenue_regressor.predict(rev_test_df)[0])
         ratings_pred = round(rating_regressor.predict(rate_test_df)[0],1)
 
+        if input_dict["moviename"] != "":
+            movie_name = input_dict["moviename"]
+
     else:
         err_msg = 1
+        movie_name=""
         revenue_pred = "-"
         ratings_pred = "-"
     
-    predictions = {"err_msg":err_msg,"revenue": revenue_pred, "rating": ratings_pred}
+    predictions = {"err_msg":err_msg,"movie_name":movie_name,"revenue": revenue_pred, "rating": ratings_pred}
 
     return predictions
 

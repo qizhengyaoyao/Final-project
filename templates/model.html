@@ -35,39 +35,45 @@
 
 			<main class="main-content">
 				<div class="container shrinked">
-					<h1 class="section-title">Have questions? <span>Contact us!</span></h1>
+					<h1 class="section-title">Predict <span>Revenue/Rating </span>of movies</h1>
 
 					<div class="entry-content">
-						<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p> 
-					</div>
+						<h2>Data Wrangling</h2>
+						<p>We first clean our data. The inputs we used are listed as follows:</p> 
+						<li>budget</li>
+						<li>popularity</li>
+						<li>year</li>
+						<li>day of published year</li>
+						<li>duration</li>
+						<li>language</li>
+						<li>genre</li>
+						<li>country</li>
+						<li>company</li>
+						<li>director</li>
+						<li>writer</li>
+						<li>actor</li>
 
-					<div class="row contact-section">
-						<form action="" class="contact-form">
-							<div class="col-sm-6">
-								<div class="control">
-									<input type="text" placeholder="Name...">
-									<i class="fa fa-user"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Email...">
-									<i class="fa fa-envelope"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Website...">
-									<i class="fa fa-link"></i>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="control">
-									<textarea placeholder="Message..."></textarea>
-									<i class="fa fa-pencil"></i>
-								</div>
+						<h2>Feature Selection</h2>
+						<p>We then did a feature selction.</p>
+						<img src="../static/images/top_genres_wordcloud.svg" alt="Top Genres" class = "figure">
+						<figcaption>Top Genres</figcaption>
 
-								<div class="right-aligned">
-									<input type="submit" value="Send Message">
-								</div>
-							</div>
-						</form>
+						<p>The most frequent variables are not necessarily the most important features for the predictors. 
+							The number of important features is reduced to about 300 after this selection process.</p>
+						<img src="../static/images/revenue_feature_importance_xgb.svg" alt="Feature Importance for Revenue" class = "figure">
+						<figcaption>Feature Importance for Revenue</figcaption>
+						<img src="../static/images/rating_feature_importance_xgb.svg" alt="Feature Importance for Rating" class = "figure">
+						<figcaption>Feature Importance for Rating</figcaption>
+
+						<br>
+						<h2>Accuracy of different predictors</h2>
+						<p>We used GridSearchCV to tune our models.</p>
+						<p>For XGBOOST model, the R2 score of revenue predictor can achieve 77% and the R2 score of rate predictor can achieve 61%.</p>
+
+						<img src="../static/images/revenue_predictor_accuracy_xgb.svg" alt="Revenue Predictor Accuracy by XGBOOST" class = "figure">
+						<figcaption>Revenue Predictor Accuracy by XGBOOST</figcaption>
+						<img src="../static/images/rating_predictor_accuracy_xgb.svg" alt="Rating Predictor Accuracy by XGBOOST" class = "figure">
+						<figcaption>Rating Predictor Accuracy by XGBOOST</figcaption>
 					</div>
 
 				</div>	<!-- .container -->
