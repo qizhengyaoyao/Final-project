@@ -6,11 +6,11 @@ Producers pitch movie ideas to studios in hopes of making the next blockbuster, 
 Our Machine Learning Program enables Producers to better assess and choose which films would be a success and which are likely to flop with greater confidence.
 
 
-.
-├── ...
-├── analysis
-├── data
-├── model
-├── static
-├── templates
-└── ...
+    .
+    ├── ...
+    ├── analysis
+    ├── data
+    ├── model
+    ├── static
+    ├── templates
+    └── ...
