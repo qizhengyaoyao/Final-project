@@ -134,7 +134,7 @@
 							In particular, XGBoost required a significantly longer time to run GridSearchCV and more processing power than LightGBM, as much as 12x longer to run. 
 							Whilst this favours LightGBM’s hyperparameter tuning ability, it was still a lengthy process (up to an hour in some cases and depending on one’s computer processing power) and ultimately yielded lower R-squared scores than XGBoost, albeit by a small margin.</p>
 
-						<p>Another interpretation of the R-squared values could be that the low scores, particularly for review-score predictions, is not necessarily a sign of an inaccurate model. 
+						<p>Another <a href="https://blog.minitab.com/en/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit#:~:text=R%2Dsquared%20is%20a%20statistical,multiple%20determination%20for%20multiple%20regression.&text=100%25%20indicates%20that%20the%20model,response%20data%20around%20its%20mean.">interpretation of the R-squared values</a> could be that the low scores, particularly for review-score predictions, is not necessarily a sign of an inaccurate model. 
 							A good model may have a low R-squared value and a model that does not fit the data could have a high R-squared value. 
 							A low R-squared value model is typical when predicting human behaviour, such as psychology, which is evidenced in our results for the review score models. 
 							In contrast, high R-squared values could prove inaccurate, where a regression systematically over or under-predicts the data (bias) and a plot comparing residual and fitted values reveals patterns instead of randomness, indicating a bad fit. </p>
