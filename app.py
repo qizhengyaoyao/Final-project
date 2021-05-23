@@ -1,13 +1,6 @@
 import os
 from predictor import film_predictor
-#from dotenv import load_dotenv
-from flask import (
-    Flask,
-    render_template,
-    jsonify,
-    request,
-    redirect)
-#from flask_cors import CORS
+from flask import (Flask,render_template,request)
 import requests
 
 #################################################
@@ -56,7 +49,7 @@ def main():
         movie_name=""
         revenue_pred = "-"
         ratings_pred = "-"
-        predictions = {"err_msg":err_msg, "revenue": revenue_pred, "rating": ratings_pred}
+        predictions = {"err_msg":err_msg,"movie_name":movie_name, "revenue": revenue_pred, "rating": ratings_pred}
 
         return render_template("index.html", result = predictions)
 
