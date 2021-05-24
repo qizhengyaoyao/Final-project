@@ -64,4 +64,4 @@ To use this app, please fill all  the * field (Budget/Popularity/Year/Day of the
 ![Film predictor](images/predicta.jpeg)
 
 ## Acknowledgements
-The data used for this app is scraped from [IMDB](https://www.imdb.com) and provided by [https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset].
+The data used for this app is scraped from [IMDB](https://www.imdb.com) and provided by [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset).
