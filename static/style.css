@@ -275,6 +275,10 @@ td > code {
   border-radius: .2rem;
 }
 
+h2 > span {
+  color: red;
+}
+
 .center-aligned {
   text-align: center; }
 
