@@ -58,8 +58,8 @@ To use this app, please fill all  the * field (Budget/Popularity/Year/Day of the
 * Popularity (an `int` number, the number of people who are interested in this movie)
 * Year(an `int` number > 1920)
 * Day of the Year (an `int` number range from 1 - 365)
-* Duration (an `int number, length of the movie in minutes)
-* Others （string, can be multiple items, seperate by `:`)
+* Duration (an `int` number, length of the movie in minutes)
+* Others （`string`, can be multiple items, seperate by `;`)
 
 ![Film predictor](images/predicta.jpeg)
 
