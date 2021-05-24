@@ -6,6 +6,11 @@ Producers pitch movie ideas to studios in hopes of making the next blockbuster, 
 
 Our Machine Learning Program enables Producers to better assess and choose which films would be a success and which are likely to flop with greater confidence.
 
+## Status
+
+* Project is finalised
+* Published site: https://vic-crime.herokuapp.com/
+
 ## Workflow
 
 1. [Data Wrangling](model/01_Data_Wrangling.ipynb)
@@ -24,6 +29,7 @@ Raw data [IMDb movies.csv] from [Kaggle](https://www.kaggle.com/stefanoleone992/
     .
     ├── analysis            # data and model exploration 
     ├── data                # raw data
+    ├── images              # output plot
     ├── model               # model training and cleaned data
     │   ├── encoded_data    # cleaned data
     │   └── ....            # model training codes
@@ -33,15 +39,29 @@ Raw data [IMDb movies.csv] from [Kaggle](https://www.kaggle.com/stefanoleone992/
 
 ## Result
 
-XGBoost and LightGBM are selected to train for our prdeictor. They both have good accuracy. LightGBM is 12* faster than XGBoost. However, the accuracy of LightGBM is a little bit worse than XGBoost. So we select XGBoost model for our app.
+XGBoost and LightGBM are selected to train for our prdeictor as there are a lot of binary-type inputs in our encoded data. Raw data has around 1870 inputs. We have reduced the number of inputs to around 400 by using XGBoost `_feature_importance`. After hyperparameter tuning, both `XGBoost` and `LightGBM` have good accuracy. LightGBM is 12X faster than XGBoost. However, the accuracy of LightGBM is a little bit worse than XGBoost. So we select XGBoost model for our app.
 
 R2 Score | Revenue Prdictor | Review Score Predictor
 ---------| ---------------- | ----------------------
 XGBoost | 0.78 | 0.61
 LightGBM | 0.77 | 0.58
 
-The preditor has been deployed on [Heroku](https://film-predict.herokuapp.com/) and the model traing analysis has also been given in the [model introduction page](https://film-predict.herokuapp.com/model).
+![Revenue Predictor Accuracy by XGBoost model](images/revenue_predictor_accuracy_xgb.jpg)
+![Review Score Predictor Accuracy by XGBoost model](images/rating_predictor_accuracy_xgb.jpg)
+
+The preditor has been deployed on [Heroku](https://film-predict.herokuapp.com/) and the model traing analysis has also been given in the [model introduction page](https://film-predict.herokuapp.com/model)
+
+To use this app, please fill all  the * field (Budget/Popularity/Year/Day of the year/Duration) in the page.
+
+* Movie name (your interested movie)
+* Budget (an `int` number, in US dollar)
+* Popularity (an `int` number, the number of people who are interested in this movie)
+* Year(an `int` number > 1920)
+* Day of the Year (an `int` number range from 1 - 365)
+* Duration (an `int number, length of the movie in minutes)
+* Others （string, can be multiple items, seperate by `:`)
 
 ![Film predictor](images/predicta.jpeg)
 
-## Summary
+## Acknowledgements
+The data used for this app is scraped from [IMDB](https://www.imdb.com) and provided by [https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset].
