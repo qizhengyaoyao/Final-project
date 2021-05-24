@@ -19,7 +19,7 @@ Our Machine Learning Program enables Producers to better assess and choose which
 
 ## File description
 
-Raw data [IMDb movies.csv] from [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) can be found in [data](data) folder. Cleaned data, including selected features and encoded inputs, can be found in [encoded_data](model/encoded_data) folder.
+Raw data [IMDb movies.csv] from [Kaggle](https://www.kaggle.com/stefanoleone992/imdb-extensive-dataset) can be found in [data](data) folder. Cleaned data, including selected features and encoded inputs, can be found in [encoded_data](model/encoded_data) folder. The tuned xgboost and lightgbm models are saved in [model](model) foler.
 
     .
     ├── analysis            # data and model exploration 
@@ -33,7 +33,12 @@ Raw data [IMDb movies.csv] from [Kaggle](https://www.kaggle.com/stefanoleone992/
 
 ## Result
 
-The 
+XGBoost and LightGBM are selected to train for our prdeictor. They both have good accuracy. LightGBM is 12* faster than XGBoost. However, the accuracy of LightGBM is a little bit worse than XGBoost. So we select XGBoost model for our app.
+
+R2 Score | Revenue Prdictor | Review Score Predictor
+---------| ---------------- | ----------------------
+XGBoost | 0.78 | 0.61
+LightGBM | 0.77 | 0.58
 
 The preditor has been deployed on [Heroku](https://film-predict.herokuapp.com/) and the model traing analysis has also been given in the [model introduction page](https://film-predict.herokuapp.com/model).
 
