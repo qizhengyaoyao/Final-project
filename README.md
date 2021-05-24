@@ -9,7 +9,7 @@ Our Machine Learning Program enables Producers to better assess and choose which
 ## Status
 
 * Project is finalised
-* Published site: https://vic-crime.herokuapp.com/
+* Published site: [Film-predictor](https://film-predict.herokuapp.com/)
 
 ## Workflow
 
