@@ -55,6 +55,53 @@
 					</div> <!-- .counter -->
 				</div> <!-- .counter-wrap -->
 
+				<div>
+					{% if result.err_msg==0 and result.movie_name %}
+					<h2 class="center-aligned">Using the following features:</h2>
+					<br>
+					<table style="width:100%;">
+						<tbody>
+							<tr>
+								<td><b>Popularity:</b></td>
+								<td><span> {{ "{:,}".format(inputs.popularity|int) }} </span></td>
+								<td><b>Budget:</b></td>
+								<td><span> {{ "${:,}".format(inputs.budget|int) }} </span></td>
+							</tr>
+							<tr>
+								<td><b>Day of the Year:</b></td>
+								<td><span> {{ inputs.day }} </span></td>
+								<td><b>Year:</b></td>
+								<td><span> {{ inputs.year }} </span></td>
+							</tr>
+							<tr>
+								<td><b>Language:</b></td>
+								<td><span> {{ inputs.language }} </span></td>
+								<td><b>Duration (mins):</b></td>
+								<td><span> {{ inputs.duration }} </span></td>
+							</tr>
+							<tr>
+								<td><b>Country:</b></td>
+								<td><span> {{ inputs.country }} </span></td>
+								<td><b>Genre:</b></td>
+								<td><span> {{ inputs.genre }} </span></td>
+							</tr>
+							<tr>
+								<td><b>Company:</b></td>
+								<td><span> {{ inputs.company }} </span></td>
+								<td><b>Director(s):</b></td>
+								<td><span> {{ inputs.director }} </span></td>
+							</tr>
+							<tr>
+								<td><b>Writer(s):</b></td>
+								<td><span> {{ inputs.writer }} </span></td>
+								<td><b>Actor(s):</b></td>
+								<td><span> {{ inputs.actor }} </span></td>
+							</tr>
+						</tbody>
+					</table>
+					<br>
+					{% endif %}
+				</div>
 
 				<h2 class="center-aligned" style="font-weight: 300">
 					{% if result.err_msg %}

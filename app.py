@@ -42,7 +42,7 @@ def main():
 
         predictions=film_predictor(input_dict)
 
-        return render_template("index.html", result = predictions)
+        return render_template("index.html", result = predictions, inputs = input_dict)
 
     else:
         err_msg = 1

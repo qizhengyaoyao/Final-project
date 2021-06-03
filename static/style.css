@@ -97,13 +97,26 @@ code,
 kbd,
 pre,
 samp {
-  font-family: monospace, serif;
+  color: #fa7ec6;
+  font-family: 'Cutive Mono', monospace;
   font-size: 1em; }
 
 pre {
   white-space: pre;
   white-space: pre-wrap;
   word-wrap: break-word; }
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #423944;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}
 
 q {
   quotes: "\201C" "\201D" "\2018" "\2019"; }
@@ -203,6 +216,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+td span {
+  color:#61d8ba;
+}
+
 *, *:before, *:after {
   -moz-box-sizing: border-box;
        box-sizing: border-box; }
@@ -219,7 +236,7 @@ body {
   background-image: -webkit-radial-gradient(circle, #39323e, #262029);
   background-image: radial-gradient(circle, #39323e, #262029);
   background-size: cover;
-  background-atachment: fixed; }
+  background-attachment: fixed; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
@@ -243,7 +260,7 @@ address {
 p {
   margin-top: 0; }
 
-form input, form textarea, form select {
+form input, form textarea, form select, tr {
   outline: none;
   border: 2px solid #4c4551;
   background: #262029;
@@ -255,25 +272,6 @@ form select {
   appearance: none; }
 form textarea {
   resize: vertical; }
-
-
-/* For all <code> */
-code {
-  color: #fa7ec6;
-  font-family: 'Cutive Mono', monospace;
-  font-size: inherit;
-}
-/* Code in text */
-p > code,
-li > code,
-dd > code,
-td > code {
-  background: #423944;
-  word-wrap: break-word;
-  box-decoration-break: clone;
-  padding: .1rem .3rem .2rem;
-  border-radius: .2rem;
-}
 
 h2 > span {
   color: red;
