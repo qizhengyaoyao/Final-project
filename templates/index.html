@@ -1,162 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
-		<title>Predicta</title>
 
-		<!-- Loading third party fonts -->
-		<link href="../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../static/style.css">
-		
-		<!--[if lt IE 9]>
+	<title>Predicta</title>
+
+	<!-- Loading third party fonts -->
+	<link href="../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Loading main css file -->
+	<link rel="stylesheet" href="../static/style.css">
+
+	<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
 		<script src="js/ie-support/respond.js"></script>
 		<![endif]-->
 
-	</head>
+</head>
 
 
-	<body>
-		
-		<div class="site-content">
-			
-			<header class="site-header">
-				<div class="container shrinked">
-					<a href="{{ url_for('about') }}" class="button">About Us</a>
-					<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
-					<a href="{{ url_for('model') }}" class="button">Our Model</a>
-				</div>	<!-- .container -->
-			</header> <!-- .site-header -->
+<body>
 
-			<main class="main-content">
-				<div class="container shrinked">
-					<h1 class="section-title center-aligned">Predict a movie's <br> <span>Revenue and Rating!</span></h1>
+	<div class="site-content">
 
-					<h1 class="section-title center-aligned">
-						{% if result.err_msg==0 and result.movie_name %}
-							Prediction of <span> Movie: &#60; {{ result.movie_name }} &#62; </span>
-						{% endif %}
-					</h1>
-
-					<div class="counter-wrap">
-						<div class="counter revenue">
-							<div class="number">{{ result.revenue }}</div>
-							<div class="caption">Revenue</div>
-						</div> <!-- .counter -->
-						<div class="counter rating">
-							<div class="number">{{ result.rating }}</div>
-							<div class="caption">Rating</div>
-						</div> <!-- .counter -->
-					</div> <!-- .counter-wrap -->
-
-					
-					<h2 class="center-aligned" style="font-weight: 300">
-						{% if result.err_msg %}
-							Please fill <span> valid value </span> in all the <span> * </span> fields
-						{% endif %}
-					</h2>
-
-					<div class="row contact-section">
-						<form action="/index" method="post" class="contact-form">
-							<div class="col-sm-6">
-								<div class="control">
-									<input type="text" placeholder="Movie Name" id="moviename" name="moviename">
-									<i class="fa fa-usd"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="* Popularity e.g. 100000000" id="popularity" name="popularity">
-									<i class="fa fa-fire"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="* Day of the year (1 to 365)" id="day" name="day">
-									<i class="fa fa-calendar" aria-hidden="true"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Language" id="language" name="language">
-									<i class="fa fa-globe"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Country" id="country" name="country">
-									<i class="fa fa-map-marker"></i>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="control">
-									<input type="text" placeholder="* Budget e.g. 100000000" id="budget" name="budget">
-									<i class="fa fa-usd"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="* Year (>1920)" id="year" name="year">
-									<i class="fa fa-calendar-o"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="* Duration (Minutes)" id="duration" name="duration">
-									<i class="fa fa-clock-o"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Genre" id="genre" name="genre">
-									<i class="fa fa-play"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Company" id="company" name="company">
-									<i class="fa fa-building-o"></i>
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="control">
-									<input type="text" placeholder="Director(s) (For multiple directors, separate by ;)" id="director" name="director">
-									<i class="fa fa-video-camera"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Writer(s) (For multiple writers, separate by ;)" id="writer" name="writer">
-									<i class="fa fa-pencil"></i>
-								</div>
-								<div class="control">
-									<input type="text" placeholder="Actor(s) (For multiple actors, separate by ;)" id="actor" name="actor">
-									<i class="fa fa-user"></i>
-								</div>
-								<div class="center-aligned">
-									<input type="submit" value="Submit" id="submit" name="submit">
-								</div>
-							</div>
-							
-						</form>
-					</div>
-
-				</div>	<!-- .container -->
-			</main> <!-- .main-content -->
-
+		<header class="site-header">
 			<div class="container shrinked">
-					
-				
+				<a href="{{ url_for('about') }}" class="button">About Us</a>
+				<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
+				<a href="{{ url_for('model') }}" class="button">Our Model</a>
+			</div> <!-- .container -->
+		</header> <!-- .site-header -->
 
-			</div>	<!-- .container -->
+		<main class="main-content">
+			<div class="container shrinked">
+				<h1 class="section-title center-aligned">Predict a movie's <br> <span>Revenue and Rating!</span></h1>
 
-			<footer class="site-footer">
-				<div class="container shrinked">
-					
-					<div class="social-links">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="https://github.com/qizhengyaoyao/Final-project"><i class="fa fa-github"></i></a>
-					</div> <!-- .social-links -->
+				<h1 class="section-title center-aligned">
+					{% if result.err_msg==0 and result.movie_name %}
+					Prediction of <span> Movie: {{ result.movie_name }} </span>
+					{% endif %}
+				</h1>
 
-					<div class="colophon">Copyright 2021 Bugaoxing Group. All right reserved</div>
-				</div>	<!-- .container -->
-			</footer> <!-- .site-footer -->
+				<div class="counter-wrap">
+					<div class="counter revenue">
+						<div class="number">{{ result.revenue }}</div>
+						<div class="caption">Revenue</div>
+					</div> <!-- .counter -->
+					<div class="counter rating">
+						<div class="number">{{ result.rating }}</div>
+						<div class="caption">Rating</div>
+					</div> <!-- .counter -->
+				</div> <!-- .counter-wrap -->
 
-		</div>
 
-		<!-- <script src="../static/js/jquery-1.11.1.min.js"></script> -->
-		<!-- <script src="../static/js/plugins.js"></script> -->
-		<!-- <script src="../static/js/app.js"></script> -->
-		
-	</body>
+				<h2 class="center-aligned" style="font-weight: 300">
+					{% if result.err_msg %}
+					Please fill <span> valid value </span> in all the <span> * </span> fields
+					{% endif %}
+				</h2>
+
+				<div class="row contact-section">
+					<form action="/index" method="post" class="contact-form">
+						<div class="col-sm-6">
+							<div class="control">
+								<input type="text" placeholder="Movie Name" id="moviename" name="moviename">
+								<i class="fa fa-usd"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="* Popularity e.g. 100000000" id="popularity"
+									name="popularity">
+								<i class="fa fa-fire"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="* Day of the year (1 to 365)" id="day" name="day">
+								<i class="fa fa-calendar" aria-hidden="true"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Language" id="language" name="language">
+								<i class="fa fa-globe"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Country" id="country" name="country">
+								<i class="fa fa-map-marker"></i>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="control">
+								<input type="text" placeholder="* Budget e.g. 100000000" id="budget" name="budget">
+								<i class="fa fa-usd"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="* Year (>1920)" id="year" name="year">
+								<i class="fa fa-calendar-o"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="* Duration (Minutes)" id="duration" name="duration">
+								<i class="fa fa-clock-o"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Genre (separate by ;)" id="genre" name="genre">
+								<i class="fa fa-play"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Company" id="company" name="company">
+								<i class="fa fa-building-o"></i>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="control">
+								<input type="text" placeholder="Director(s) (For multiple directors, separate by ;)"
+									id="director" name="director">
+								<i class="fa fa-video-camera"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Writer(s) (For multiple writers, separate by ;)"
+									id="writer" name="writer">
+								<i class="fa fa-pencil"></i>
+							</div>
+							<div class="control">
+								<input type="text" placeholder="Actor(s) (For multiple actors, separate by ;)"
+									id="actor" name="actor">
+								<i class="fa fa-user"></i>
+							</div>
+							<div class="center-aligned">
+								<input type="submit" value="Submit" id="submit" name="submit">
+							</div>
+						</div>
+
+					</form>
+				</div>
+
+			</div> <!-- .container -->
+		</main> <!-- .main-content -->
+
+		<div class="container shrinked">
+
+
+
+		</div> <!-- .container -->
+
+		<footer class="site-footer">
+			<div class="container shrinked">
+
+				<div class="social-links">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-google-plus"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="https://github.com/qizhengyaoyao/Final-project"><i class="fa fa-github"></i></a>
+				</div> <!-- .social-links -->
+
+				<div class="colophon">Copyright 2021 Bugaoxing Group. All right reserved</div>
+			</div> <!-- .container -->
+		</footer> <!-- .site-footer -->
+
+	</div>
+
+	<!-- <script src="../static/js/jquery-1.11.1.min.js"></script> -->
+	<!-- <script src="../static/js/plugins.js"></script> -->
+	<!-- <script src="../static/js/app.js"></script> -->
+
+</body>
 
 </html>

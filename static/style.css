@@ -259,8 +259,8 @@ form textarea {
 
 /* For all <code> */
 code {
-  color: #4d4552;
-  font-family: MyFancyCustomFont, monospace;
+  color: #fa7ec6;
+  font-family: 'Cutive Mono', monospace;
   font-size: inherit;
 }
 /* Code in text */
@@ -268,7 +268,7 @@ p > code,
 li > code,
 dd > code,
 td > code {
-  background: #ffeff0;
+  background: #423944;
   word-wrap: break-word;
   box-decoration-break: clone;
   padding: .1rem .3rem .2rem;
@@ -286,7 +286,7 @@ h2 > span {
   text-align: right; }
 
 .container.shrinked {
-  padding: 0 200px; }
+  padding: 0 100px; }
   @media screen and (min-width: 991px) and (max-width: 1200px) {
     .container.shrinked {
       padding: 0 100px; } }
@@ -330,7 +330,7 @@ h2 > span {
   font-size: 1em;
   position: relative;
   z-index: 1;
-  overlfow: hidden;
+  overflow: hidden;
   border-left: none;
   border-right: none;
   border-bottom: none;

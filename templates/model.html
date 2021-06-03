@@ -1,78 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
-		
-		<title>Predictal</title>
 
-		<!-- Loading third party fonts -->
-		<link href="../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 
-		<!-- Loading main css file -->
-		<link rel="stylesheet" href="../static/style.css">
-		
-		<!--[if lt IE 9]>
+	<title>Predicta - Our Model</title>
+
+	<!-- Loading third party fonts -->
+	<link href="../static/fonts/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono">
+
+	<!-- Loading main css file -->
+	<link rel="stylesheet" href="../static/style.css">
+
+	<!--[if lt IE 9]>
 		<script src="js/ie-support/html5.js"></script>
 		<script src="js/ie-support/respond.js"></script>
 		<![endif]-->
 
-	</head>
+</head>
 
 
-	<body>
-		
-		<div class="site-content">
-			
-			<header class="site-header">
-				<div class="container shrinked">
-					<a href="{{ url_for('about') }}" class="button">About Us</a>
-					<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
-					<a href="{{ url_for('model') }}" class="button">Our Model</a>
-				</div>	<!-- .container -->
-			</header> <!-- .site-header -->
+<body>
 
-			<main class="main-content">
-				<div class="container shrinked">
-					<h1 class="section-title">Predict <span>Revenue/Rating </span>of movies</h1>
+	<div class="site-content">
 
-					<div class="entry-content">
-						<h2>The model</h2>
-						<p>In essence, a film revenue/review score predictor is a regression prediction: trying to find a trend line from the training dataset and using that to predict the outcome of an unreleased film. 
-							Our research found that two machine learning models would be good for this type of prediction: <a href="https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d">Extreme Gradient Boost (XGBoost)</a> 
-							and <a href="https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc">Light Gradient Boost Machine (LightGBM)</a>.
-							Both models are gradient boosted decision tree models: an ensemble machine learning algorithm that, as with traditional decision trees, assesses the data using the decision tree method, 
-							however, rather than using one decision tree, gradient boosted models create multiple trees sequentially, with each subsequent tree learning from the previous tree and thus progressively minimises an error gradient, 
-							resulting in a more accurate regression analysis and prediction.</p>
+		<header class="site-header">
+			<div class="container shrinked">
+				<a href="{{ url_for('about') }}" class="button">About Us</a>
+				<h1 class="logo"><a href="{{ url_for('home') }}">Predicta</a></h1>
+				<a href="{{ url_for('model') }}" class="button">Our Model</a>
+			</div> <!-- .container -->
+		</header> <!-- .site-header -->
 
-						<p>Our process involved importing an IMDb dataset and performing a number of ETL steps to reduce the data and convert to numerical data types for training the ensemble machine learning algorithms. 
-							Once the dataset was of a suitable size and datatype format, the <code>.regressor()</code> method from both XGBoost and LightGBM was used to determine a baseline accuracy 
-							(measured using R-squared scoring), followed by a <code>.feature_importances_ method</code> to isolate the most important features. 
-							A reduced dataframe using the most important features was then used to train new XGBoost and LightGBM models, 
-							followed by hyperparameter optimisation/tuning to determine if further optimisation could be done to yield greater accuracy (i.e. a higher R-squared score.)  </p>
+		<main class="main-content">
+			<div class="container shrinked">
+				<h1 class="section-title">Predict <span>Revenue/Rating </span>of movies</h1>
 
-						<h2>Data Wrangling</h2>
-						<p>Our original dataset of IMDb film data included over 85,000 data points, with a variety of inputs to analyse. 
-							The data wrangling process involved focusing our dataset to items we perceived to be important for making accurate predictions for future films. 
-							The first step was to drop all rows of incomplete data, which immediately reduced our dataset to just over 8,900 rows. 
-							We deemed this to be a satisfactory sample size for analysis and reduced the dataset further on the budget column. 
-							The budget column included various currency symbols, thus we reduced it by isolating only data with the dollar symbol “$” under the assumption that all “$” budgets represent american films. </p> 
+				<div class="entry-content">
+					<h2>The model</h2>
+					<p>In essence, a film revenue/review score predictor is a regression prediction: trying to find a
+						trend line from the training dataset and using that to predict the outcome of an unreleased
+						film.
+						Our research found that two machine learning models would be good for this type of prediction:
+						<a
+							href="https://towardsdatascience.com/https-medium-com-vishalmorde-xgboost-algorithm-long-she-may-rein-edd9f99be63d">Extreme
+							Gradient Boost (XGBoost)</a>
+						and <a
+							href="https://medium.com/@pushkarmandot/https-medium-com-pushkarmandot-what-is-lightgbm-how-to-implement-it-how-to-fine-tune-the-parameters-60347819b7fc">Light
+							Gradient Boost Machine (LightGBM)</a>.
+						Both models are gradient boosted decision tree models: an ensemble machine learning algorithm
+						that, as with traditional decision trees, assesses the data using the decision tree method,
+						however, rather than using one decision tree, gradient boosted models create multiple trees
+						sequentially, with each subsequent tree learning from the previous tree and thus progressively
+						minimises an error gradient,
+						resulting in a more accurate regression analysis and prediction.
+					</p>
 
-						<p>From this reduced dataset, we performed transformations to columns that had numerical data but were classified as non-numerical (e.g. object type.) 
-							The columns <code>“budget”</code> and <code>“worldwide_gross_income”</code> had their currency prefix “$” removed from each datapoint and both columns then converted to integer types <code>“int64”</code>.
-							Data from the column <code>“date_published”</code> was in essence extracted to two numerical columns: <code>“year”</code> which extracted the year as an integer type (<code>“int64”</code>) and <code>“day”</code> which converted the day of the year for a film’s release into a numerical value from 1 to 365 to represent each day of the year. 
-							The <code>“date_published”</code> column was subsequently dropped from analysis.</p>
+					<p>Our process involved importing an IMDb dataset and performing a number of ETL steps to reduce the
+						data and convert to numerical data types for training the ensemble machine learning algorithms.
+						Once the dataset was of a suitable size and datatype format, the <code>.regressor()</code>
+						method from both XGBoost and LightGBM was used to determine a baseline accuracy
+						(measured using R-squared scoring), followed by a <code>.feature_importances_</code> method to
+						isolate the most important features.
+						A reduced dataframe using the most important features was then used to train new XGBoost and
+						LightGBM models,
+						followed by hyperparameter optimisation/tuning to determine if further optimisation could be
+						done to yield greater accuracy (i.e. a higher R-squared score.) </p>
 
-						<p>In order to “numberfy” the remaining string data, which were critical to representing the characteristics of each film - e.g. language, genre, country, actors, director, writer and production company - 
-							these datapoints were each extracted to a list, splitting the strings within each category to its individual elements (i.e. the first five actors credited in a film were separated as an item in a list) 
-							and then making every element in every list as a new column in the dataset and assigning a 1 where that item exists for each movie in the dataset and a 0 where it does not. 
-							Essentially, it is a simple binary classification, similar in intention to One-Hot Encoding but without converting the data into a 2D array. </p>
+					<h2>Data Wrangling</h2>
+					<p>Our original dataset of IMDb film data included over 85,000 data points, with a variety of inputs
+						to analyse.
+						The data wrangling process involved focusing our dataset to items we perceived to be important
+						for making accurate predictions for future films.
+						The first step was to drop all rows of incomplete data, which immediately reduced our dataset to
+						just over 8,900 rows.
+						We deemed this to be a satisfactory sample size for analysis and reduced the dataset further on
+						the budget column.
+						The budget column included various currency symbols, thus we reduced it by isolating only data
+						with the dollar symbol “$” under the assumption that all “$” budgets represent american films.
+					</p>
 
-						<p>Due to the large numerical values found within some columns, the data was scaled using the <code>MinMaxScaler()</code> method from SciKit Learn’s preprocessing library. 
-							During our exploration, it was discovered that the columns that had the greatest effect on accuracy from scaling were the “duration” and “day” columns, thus only those two columns were scaled. </p>
+					<p>From this reduced dataset, we performed transformations to columns that had numerical data but
+						were classified as non-numerical (e.g. object type.)
+						The columns <code>“budget”</code> and <code>“worldwide_gross_income”</code> had their currency
+						prefix “$” removed from each datapoint and both columns then converted to integer types
+						<code>“int64”</code>.
+						Data from the column <code>“date_published”</code> was in essence extracted to two numerical
+						columns: <code>“year”</code> which extracted the year as an integer type (<code>“int64”</code>)
+						and <code>“day”</code> which converted the day of the year for a film’s release into a numerical
+						value from 1 to 365 to represent each day of the year.
+						The <code>“date_published”</code> column was subsequently dropped from analysis.
+					</p>
 
-						<!-- <li>budget</li>
+					<p>In order to “numberfy” the remaining string data, which were critical to representing the
+						characteristics of each film - e.g. language, genre, country, actors, director, writer and
+						production company -
+						these datapoints were each extracted to a list, splitting the strings within each category to
+						its individual elements (i.e. the first five actors credited in a film were separated as an item
+						in a list)
+						and then making every element in every list as a new column in the dataset and assigning a 1
+						where that item exists for each movie in the dataset and a 0 where it does not.
+						Essentially, it is a simple binary classification, similar in intention to One-Hot Encoding but
+						without converting the data into a 2D array. </p>
+
+					<p>Due to the large numerical values found within some columns, the data was scaled using the
+						<code>MinMaxScaler()</code> method from SciKit Learn’s preprocessing library.
+						During our exploration, it was discovered that the columns that had the greatest effect on
+						accuracy from scaling were the “duration” and “day” columns, thus only those two columns were
+						scaled.
+					</p>
+
+					<!-- <li>budget</li>
 						<li>popularity</li>
 						<li>year</li>
 						<li>day of published year</li>
@@ -85,89 +127,151 @@
 						<li>writer</li>
 						<li>actor</li> -->
 
-						<h2>Feature Selection</h2>
-						<p>Both the XGBoost and LightGBM models include a <code>.feature_importances_</code> method which calculates the importance of each feature in training the predictive accuracy of the model. 
-							While both models score each feature in terms of a positive value, the range of values differ between XGBoost and LightGBM. 
-							The former appears to score features as decimal values (between 0 and 1) while the latter appears to score features as integer values from 0 and above. 
-							Thus the conditional <code>if</code> statement differs between the two models only in terms of values to include in the conditional statement. 
-							In other words, the method to extract the important features is the same, but the criteria is specific to each model (decimal values for XGBoost, integer values for LightGBM.) </p>
+					<h2>Feature Selection</h2>
+					<p>Both the XGBoost and LightGBM models include a <code>.feature_importances_</code> method which
+						calculates the importance of each feature in training the predictive accuracy of the model.
+						While both models score each feature in terms of a positive value, the range of values differ
+						between XGBoost and LightGBM.
+						The former appears to score features as decimal values (between 0 and 1) while the latter
+						appears to score features as integer values from 0 and above.
+						Thus the conditional <code>if</code> statement differs between the two models only in terms of
+						values to include in the conditional statement.
+						In other words, the method to extract the important features is the same, but the criteria is
+						specific to each model (decimal values for XGBoost, integer values for LightGBM.) </p>
 
-						<p>In both revenue and review score training, our initial results showed XGBoost had many more important features than LightGBM. 
-							Out of a total of 1,870 features, 381 features for XGBoost’s revenue training model were deemed important compared to 116 features for LightGBM; 
-							similarly there were 445 important features for XGBoost compared to 114 features for LightGBM. 
-							As a result, when it came to training both models, we adopted the feature importance list from XGBoost as the LightGBM importance list did not significantly improve the accuracy (measured by R-squared score.)</p>
-						
-						<p>For revenue, the most important feature ostensibly was budget, commanding a <code>feature_importances_</code> score over 0.07, which was more than double the next-most important feature at just under 0.03. 
-							Unexpectedly, eight of the top ten features were individual entities/people, rather than broad categories. 
-							For example, Dreamworks Animation was the second-most important feature in our model, while the fourth to tenth-most important features were a series of specific qualities, such as specific languages, genre, directors and actors. 
-							The third most important feature, “popularity” (the number of review scores submitted by IMDb users, e.g. if a film had 20,000 users submit a review score for that film, the “popularity” value would be 20,000), was the only other broad category in the top ten. 
-							This may suggest a strong correlation between budget and revenue, however, further analysis may reveal how they are correlated. A surprising aspect is the number of individualistic important features, including that Dreamworks Animation is the second-most important feature. 
-							This may be a quirk of the dataset, and may reveal more about the users of IMDb favouring animations, particularly from Dreamworks, or it may suggest an unbalanced dataset where it is heavily skewed by one or two specific features.</p>
-						
-						<img src="../static/images/revenue_feature_importance_xgb.svg" alt="Feature Importance for Revenue" class = "figure">
-						<figcaption>Feature Importance for Revenue</figcaption>
+					<p>In both revenue and review score training, our initial results showed XGBoost had many more
+						important features than LightGBM.
+						Out of a total of 1,870 features, 381 features for XGBoost’s revenue training model were deemed
+						important compared to 116 features for LightGBM;
+						similarly there were 445 important features for XGBoost compared to 114 features for LightGBM.
+						As a result, when it came to training both models, we adopted the feature importance list from
+						XGBoost as the LightGBM importance list did not significantly improve the accuracy (measured by
+						R-squared score.)</p>
 
-						<p>Regarding user review scores (“Rating”), a similar trend of high importance over individualistic/specific features compared to broad categories was evidenced and indeed more pronounced than the revenue model. 
-							Films under the genre of “drama” were the most important feature, with a score of almost 0.05 and more than four times greater than the next most important feature (“popularity”) at almost 0.015. 
-							Genres collectively appear to be very important, accounting four of the top ten, while the other features appear disparate with no obvious correlation. 
-							Similar to the revenue model, “popularity” plays an important role in this model, with further analysis required to determine how user input correlates to review scores and the predictive nature of popularity for review scores. 
-							It should also be noted that the R-squared score for the review score predictor was a relatively low 50-60%, thus it may suggest that the model struggled to find meaningful correlations in the dataset to create accurate regression predictions. </p>
+					<p>For revenue, the most important feature ostensibly was budget, commanding a
+						<code>feature_importances_</code> score over 0.07, which was more than double the next-most
+						important feature at just under 0.03.
+						Unexpectedly, eight of the top ten features were individual entities/people, rather than broad
+						categories.
+						For example, Dreamworks Animation was the second-most important feature in our model, while the
+						fourth to tenth-most important features were a series of specific qualities, such as specific
+						languages, genre, directors and actors.
+						The third most important feature, “popularity” (the number of review scores submitted by IMDb
+						users, e.g. if a film had 20,000 users submit a review score, the “popularity”
+						value would be 20,000), was the only other broad category in the top ten.
+						This may suggest a strong correlation between budget and revenue, however, further analysis may
+						reveal how they are correlated. A surprising aspect is the number of individualistic important
+						features, including that Dreamworks Animation is the second-most important feature.
+						This may be a quirk of the dataset, and may reveal more about the users of IMDb favouring
+						animations, particularly from Dreamworks, or it may suggest an unbalanced dataset where it is
+						heavily skewed by one or two specific features.
+					</p>
 
-						<img src="../static/images/top_genres_wordcloud.svg" alt="Top Genres" class = "figure">
-						<figcaption>Top Genres</figcaption>
-						<img src="../static/images/rating_feature_importance_xgb.svg" alt="Feature Importance for Rating" class = "figure">
-						<figcaption>Feature Importance for Rating</figcaption>
+					<img src="../static/images/revenue_feature_importance_xgb.svg" alt="Feature Importance for Revenue"
+						class="figure">
+					<figcaption>Feature Importance for Revenue</figcaption>
 
-						<br>
-						<h2>Accuracy of Predictors</h2>
-						<p>The initial accuracy of each model was largely indicative of our final model, we were only able to marginally improve accuracy with important features selection and hyperparameter tuning (i.e. GridSearchCV). 
-							The revenue predictor using both XGBoost and LightGBM was consistently higher than the review score predictor, yielding mid-to-high 70s per cent R-squared scores, compared to the review score predictor’s mid 50s to low 60s per cent R-squared scores. </p>
+					<p>Regarding user review scores (“Rating”), a similar trend of high importance over
+						individualistic/specific features compared to broad categories was evidenced and indeed more
+						pronounced than the revenue model.
+						Films under the genre of “drama” were the most important feature, with a score of almost 0.05
+						and more than four times greater than the next most important feature (“popularity”) at almost
+						0.015.
+						Genres collectively appear to be very important, accounting four of the top ten, while the other
+						features appear disparate with no obvious correlation.
+						Similar to the revenue model, “popularity” plays an important role in this model, with further
+						analysis required to determine how user input correlates to review scores and the predictive
+						nature of popularity for review scores.
+						It should also be noted that the R-squared score for the review score predictor was a relatively
+						low 50-60%, thus it may suggest that the model struggled to find meaningful correlations in the
+						dataset to create accurate regression predictions. </p>
 
-						<img src="../static/images/revenue_predictor_accuracy_xgb.svg" alt="Revenue Predictor Accuracy by XGBOOST" class = "figure">
-						<figcaption>Revenue Predictor Accuracy by XGBOOST</figcaption>
-						<img src="../static/images/rating_predictor_accuracy_xgb.svg" alt="Rating Predictor Accuracy by XGBOOST" class = "figure">
-						<figcaption>Rating Predictor Accuracy by XGBOOST</figcaption>
+					<img src="../static/images/top_genres_wordcloud.svg" alt="Top Genres" class="figure">
+					<figcaption>Top Genres</figcaption>
+					<img src="../static/images/rating_feature_importance_xgb.svg" alt="Feature Importance for Rating"
+						class="figure">
+					<figcaption>Feature Importance for Rating</figcaption>
 
-						<p>While each model’s initial R-squared score proved very close to the value of the final models used for our app, this was only discovered by going through the process outlined above. 
-							As such, we trained the initial models to determine most important features, then isolated the dataset on the important features for training, followed by hyperparameter tuning using GridSearch CV to further optimise our model. 
-							Using GridSearchCV provided only marginal gains of a few percentage points at best, which shows not only the highly optimised nature of the models using default settings, but also raises the question of the costs/benefits of hyperparameter tuning such as using GridSearchCV and other optimisers. 
-							In particular, XGBoost required a significantly longer time to run GridSearchCV and more processing power than LightGBM, as much as 12x longer to run. 
-							Whilst this favours LightGBM’s hyperparameter tuning ability, it was still a lengthy process (up to an hour in some cases and depending on one’s computer processing power) and ultimately yielded lower R-squared scores than XGBoost, albeit by a small margin.</p>
+					<br>
+					<h2>Accuracy of Predictors</h2>
+					<p>The initial accuracy of each model was largely indicative of our final model, we were only able
+						to marginally improve accuracy with important features selection and hyperparameter tuning (i.e.
+						GridSearchCV).
+						The revenue predictor using both XGBoost and LightGBM was consistently higher than the review
+						score predictor, yielding mid-to-high 70s per cent R-squared scores, compared to the review
+						score predictor’s mid 50s to low 60s per cent R-squared scores. </p>
 
-						<p>Another <a href="https://blog.minitab.com/en/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit#:~:text=R%2Dsquared%20is%20a%20statistical,multiple%20determination%20for%20multiple%20regression.&text=100%25%20indicates%20that%20the%20model,response%20data%20around%20its%20mean.">interpretation of the R-squared values</a> could be that the low scores, particularly for review-score predictions, is not necessarily a sign of an inaccurate model. 
-							A good model may have a low R-squared value and a model that does not fit the data could have a high R-squared value. 
-							A low R-squared value model is typical when predicting human behaviour, such as psychology, which is evidenced in our results for the review score models. 
-							In contrast, high R-squared values could prove inaccurate, where a regression systematically over or under-predicts the data (bias) and a plot comparing residual and fitted values reveals patterns instead of randomness, indicating a bad fit. </p>
+					<img src="../static/images/revenue_predictor_accuracy_xgb.svg"
+						alt="Revenue Predictor Accuracy by XGBOOST" class="figure">
+					<figcaption>Revenue Predictor Accuracy by XGBOOST</figcaption>
+					<img src="../static/images/rating_predictor_accuracy_xgb.svg"
+						alt="Rating Predictor Accuracy by XGBOOST" class="figure">
+					<figcaption>Rating Predictor Accuracy by XGBOOST</figcaption>
 
-						<p>As XGBoost was deemed the most accurate, this was used for both predictors and a prediction to actual value scatter plot was plotted for review. The revenue predictions show a higher degree of inaccuracy at the lower end of revenue with a tendency to overestimate, but become increasingly more accurate at higher values. Surprisingly, despite the lower R-squared score, the review score predictions show a relatively accurate distribution as evidenced by the shape of the scatter plot along the line indicating accuracy (where predicted values = actual values). The predictor appeared to struggle slightly by underestimating some scores, with a lot of predictions hovering around the 2 to 4 range and, like the revenue predictor, tended to become more accurate at higher values. </p>
+					<p>While each model’s initial R-squared score proved very close to the value of the final models
+						used for our app, this was only discovered by going through the process outlined above.
+						As such, we trained the initial models to determine most important features, then isolated the
+						dataset on the important features for training, followed by hyperparameter tuning using
+						GridSearch CV to further optimise our model.
+						Using GridSearchCV provided only marginal gains of a few percentage points at best, which shows
+						not only the highly optimised nature of the models using default settings, but also raises the
+						question of the costs/benefits of hyperparameter tuning such as using GridSearchCV and other
+						optimisers.
+						In particular, XGBoost required a significantly longer time to run GridSearchCV and more
+						processing power than LightGBM, as much as 12x longer to run.
+						Whilst this favours LightGBM’s hyperparameter tuning ability, it was still a lengthy process (up
+						to an hour in some cases and depending on one’s computer processing power) and ultimately
+						yielded lower R-squared scores than XGBoost, albeit by a small margin.</p>
 
-						
-					</div>
+					<p>Another <a
+							href="https://blog.minitab.com/en/adventures-in-statistics-2/regression-analysis-how-do-i-interpret-r-squared-and-assess-the-goodness-of-fit#:~:text=R%2Dsquared%20is%20a%20statistical,multiple%20determination%20for%20multiple%20regression.&text=100%25%20indicates%20that%20the%20model,response%20data%20around%20its%20mean.">interpretation
+							of the R-squared values</a> could be that the low scores, particularly for review-score
+						predictions, is not necessarily a sign of an inaccurate model.
+						A good model may have a low R-squared value and a model that does not fit the data could have a
+						high R-squared value.
+						A low R-squared value model is typical when predicting human behaviour, such as psychology,
+						which is evidenced in our results for the review score models.
+						In contrast, high R-squared values could prove inaccurate, where a regression systematically
+						over or under-predicts the data (bias) and a plot comparing residual and fitted values reveals
+						patterns instead of randomness, indicating a bad fit. </p>
 
-				</div>	<!-- .container -->
-			</main> <!-- .main-content -->
+					<p>As XGBoost was deemed the most accurate, this was used for both predictors and a prediction to
+						actual value scatter plot was plotted for review. The revenue predictions show a higher degree
+						of inaccuracy at the lower end of revenue with a tendency to overestimate, but become
+						increasingly more accurate at higher values. Surprisingly, despite the lower R-squared score,
+						the review score predictions show a relatively accurate distribution as evidenced by the shape
+						of the scatter plot along the line indicating accuracy (where predicted values = actual values).
+						The predictor appeared to struggle slightly by underestimating some scores, with a lot of
+						predictions hovering around the 2 to 4 range and, like the revenue predictor, tended to become
+						more accurate at higher values. </p>
 
-			<footer class="site-footer">
-				<div class="container shrinked">
-					
-					<div class="social-links">
-						<a href="#"><i class="fa fa-facebook"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
-						<a href="#"><i class="fa fa-twitter"></i></a>
-						<a href="https://github.com/qizhengyaoyao/Final-project"><i class="fa fa-github"></i></a>
-					</div> <!-- .social-links -->
 
-					<div class="colophon">Copyright 2021 Bugaoxing Group. All right reserved</div>
+				</div>
 
-				</div>	<!-- .container -->
-			</footer> <!-- .site-footer -->
+			</div> <!-- .container -->
+		</main> <!-- .main-content -->
 
-		</div>
+		<footer class="site-footer">
+			<div class="container shrinked">
 
-		<!-- <script src="../static/js/jquery-1.11.1.min.js"></script>
+				<div class="social-links">
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-google-plus"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="https://github.com/qizhengyaoyao/Final-project"><i class="fa fa-github"></i></a>
+				</div> <!-- .social-links -->
+
+				<div class="colophon">Copyright 2021 Bugaoxing Group. All right reserved</div>
+
+			</div> <!-- .container -->
+		</footer> <!-- .site-footer -->
+
+	</div>
+
+	<!-- <script src="../static/js/jquery-1.11.1.min.js"></script>
 		<script src="../static/js/plugins.js"></script>
 		<script src="../static/js/app.js"></script> -->
-		
-	</body>
+
+</body>
 
 </html>
