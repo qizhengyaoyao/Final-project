@@ -89,7 +89,7 @@ def film_predictor(input_dict):
 
             err_msg = 0
             movie_name="-"
-            revenue_pred = "${:,.2f}".format(int(revenue_regressor.predict(rev_test_df)[0]))
+            revenue_pred = "${:,.2f}".format(float(revenue_regressor.predict(rev_test_df)[0]))
             ratings_pred = round(rating_regressor.predict(rate_test_df)[0],1)
 
             if input_dict["moviename"] != "":
