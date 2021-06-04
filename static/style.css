@@ -1350,7 +1350,7 @@ figcaption {
       -webkit-transition: 0.3s ease;
               transition: 0.3s ease; 
             }
-    .contact-form .control input, .contact-form .control textarea {
+    .contact-form .control input, .contact-form .control textarea, .contact-form .control select {
       width: 100%;
       padding-left: 50px;
       color: #61d8ba;
