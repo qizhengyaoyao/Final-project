@@ -40,7 +40,7 @@
 
 				<h1 class="section-title center-aligned">
 					{% if result.err_msg==0 and result.movie_name %}
-					Prediction of <span> Movie: {{ result.movie_name }} </span>
+					Prediction of Movie: <span id="input_movie">{{ result.movie_name }} </span>
 					{% endif %}
 				</h1>
 
@@ -63,39 +63,39 @@
 						<tbody>
 							<tr>
 								<td><b>Popularity:</b></td>
-								<td><span> {{ "{:,}".format(inputs.popularity|int) }} </span></td>
+								<td><span id="input_popularity"> {{ "{:,}".format(inputs.popularity|int) }} </span></td>
 								<td><b>Budget:</b></td>
-								<td><span> {{ "${:,}".format(inputs.budget|int) }} </span></td>
+								<td><span id="input_budget"> {{ "${:,}".format(inputs.budget|int) }} </span></td>
 							</tr>
 							<tr>
 								<td><b>Day of the Year:</b></td>
-								<td><span> {{ inputs.day }} </span></td>
+								<td><span id="input_day"> {{ inputs.day }} </span></td>
 								<td><b>Year:</b></td>
-								<td><span> {{ inputs.year }} </span></td>
+								<td><span id="input_year"> {{ inputs.year }} </span></td>
 							</tr>
 							<tr>
 								<td><b>Language:</b></td>
-								<td><span> {{ inputs.language }} </span></td>
+								<td><span id="input_language"> {{ inputs.language }} </span></td>
 								<td><b>Duration (mins):</b></td>
-								<td><span> {{ inputs.duration }} </span></td>
+								<td><span id="input_duration"> {{ inputs.duration }} </span></td>
 							</tr>
 							<tr>
 								<td><b>Country:</b></td>
-								<td><span> {{ inputs.country }} </span></td>
+								<td><span id="input_country"> {{ inputs.country }} </span></td>
 								<td><b>Genre:</b></td>
-								<td><span> {{ inputs.genre }} </span></td>
+								<td><span id="input_genre"> {{ inputs.genre }} </span></td>
 							</tr>
 							<tr>
 								<td><b>Company:</b></td>
-								<td><span> {{ inputs.company }} </span></td>
+								<td><span id="input_company"> {{ inputs.company }} </span></td>
 								<td><b>Director(s):</b></td>
-								<td><span> {{ inputs.director }} </span></td>
+								<td><span id="input_director"> {{ inputs.director }} </span></td>
 							</tr>
 							<tr>
 								<td><b>Writer(s):</b></td>
-								<td><span> {{ inputs.writer }} </span></td>
+								<td><span id="input_writer"> {{ inputs.writer }} </span></td>
 								<td><b>Actor(s):</b></td>
-								<td><span> {{ inputs.actor }} </span></td>
+								<td><span id="input_actor"> {{ inputs.actor }} </span></td>
 							</tr>
 						</tbody>
 					</table>
